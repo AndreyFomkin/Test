@@ -1,11 +1,10 @@
-﻿ double CalculateFormula(int a, int b, int c, int d);
-
+﻿void PrintSquares (int Limit)
 {
-    double numenator = a * b;
-    int denomenator = c + d;
-    double result = numenator/denomenator;
-    retutn result;
+    int i= 1;
+    while (i<=Limit)
+    {
+        Console.Write($"{i * i} ");
+        i++;
+    }
 }
-
-double result = CalculateFormula (1, 2, 3, 4);
-Console.WriteLine (result);
+PrintSquares(8);
