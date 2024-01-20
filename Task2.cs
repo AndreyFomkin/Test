@@ -1,27 +1,30 @@
-int Infiniti (int number, string q)
-{
-    
-    while(true){
+
+    while (true)
+    {
         Console.Write("Введите текст: ");
         string text = Console.ReadLine();
-        if (text=="q")
-        {
+         if (text=="q")
+         {
+        
             break;
-        }
-    }
-    if (int.TryParse(text, out number))
-    {
-         Console.Write("Введённая строчка состоит только из цифр: ");  
-    }
+            }
+            int number;
+            if(int.TryParse(text,out number));
+            {
+                Console.WriteLine("Введенная строка состоит из цифр.");
+              
     int sum = 0;
-    while (number>0)
+   
+    while(number>0)
     {
-        int sum = firstnumber + number/10;
-    } 
-    if (sum%2==0)
+ int firstDigit = number/10;
+    int twoDigit = number%10;
+        sum = firstDigit + twoDigit;
+    }
+    if ( sum % 2 == 0)
     {
         break;
     }
-
-    }
-
+}
+}
+  
