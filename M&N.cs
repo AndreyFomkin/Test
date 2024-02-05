@@ -6,7 +6,7 @@ int start = M;
 int end = N;
 void ShowNumbers(int start, int end)
 {
-    if (start == end || start > end)
+    if (start == end || start > end || start <0)
 { Console.Write(start); 
       return;
     }
