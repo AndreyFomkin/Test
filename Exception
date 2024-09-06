@@ -1,3 +1,5 @@
+package Car;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,7 +9,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Task_1 {
-    public static final int fields_number = 5;
+    public static final int fields_number = 6;
 
     public static void main(String[] args) {
         System.out.println("Введите данные: ");
@@ -28,7 +30,7 @@ public class Task_1 {
         LocalDate birthDate;
         try{
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-            birthDate = LocalDate.parse(fields[3], formatter);
+            birthDate = LocalDate.parse((fields[3]), formatter);
         } catch (DateTimeParseException e){
             System.out.println("Неверный формат даты. ");
             return;
@@ -45,11 +47,12 @@ public class Task_1 {
             System.out.println("Неправильный формат пола");
             return;
         }
-        String fileName = lastName + ".txt";
+        String fileName =  ".txt";
+
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))){
-            writer.write(lastName + " " + firstName + " " + middleName + " " + birthDate.format(DateTimeFormatter.ISO_LOCAL_DATE) + " " + phoneNumber + " " + gender);
+            writer.write(lastName + " " + firstName + " " + middleName + " " + birthDate.format(DateTimeFormatter.ISO_LOCAL_DATE)+ " " + phoneNumber + " " + gender);
             writer.newLine();
-        }catch (IOException e){
+                   }catch (IOException e){
             System.out.println("Ошибка записи. ");
         }
     }
